@@ -389,3 +389,4 @@ if (addUserForm) {
     });
 
 }
+console.log("CENDEKIA MEDIKA script.js is working!");
