@@ -1,4 +1,4 @@
-alert("SCRIPT IS WORKING");
+alert("SCRIPT.JS IS WORKING!");
 
 /* =========================================================
    CENDEKIA MEDIKA — LOGIN SYSTEM
