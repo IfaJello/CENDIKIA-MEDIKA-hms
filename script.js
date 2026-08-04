@@ -162,86 +162,41 @@ if (loginForm) {
    ADMIN — ADD USER MODAL
    ========================================================= */
 
-const addUserButton =
-    document.getElementById("addUserButton");
+document.addEventListener("DOMContentLoaded", function () {
 
-const addUserModal =
-    document.getElementById("addUserModal");
+    const addUserButton = document.getElementById("addUserButton");
+    const addUserModal = document.getElementById("addUserModal");
+    const closeUserModal = document.getElementById("closeUserModal");
+    const cancelUserModal = document.getElementById("cancelUserModal");
 
-const closeUserModal =
-    document.getElementById("closeUserModal");
+    // If we're not on the User Management page,
+    // stop here.
+    if (!addUserButton || !addUserModal) {
+        return;
+    }
 
-const cancelUserModal =
-    document.getElementById("cancelUserModal");
-
-
-function openUserModal() {
-
-    if (addUserModal) {
-
+    // OPEN MODAL
+    addUserButton.addEventListener("click", function () {
         addUserModal.hidden = false;
+    });
 
-    }
-
-}
-
-
-function closeUserModalFunction() {
-
-    if (addUserModal) {
-
+    // CLOSE MODAL
+    closeUserModal.addEventListener("click", function () {
         addUserModal.hidden = true;
+    });
 
-    }
+    // CANCEL
+    cancelUserModal.addEventListener("click", function () {
+        addUserModal.hidden = true;
+    });
 
-}
+    // CLICK OUTSIDE MODAL
+    addUserModal.addEventListener("click", function (event) {
 
-
-if (addUserButton) {
-
-    addUserButton.addEventListener(
-        "click",
-        openUserModal
-    );
-
-}
-
-
-if (closeUserModal) {
-
-    closeUserModal.addEventListener(
-        "click",
-        closeUserModalFunction
-    );
-
-}
-
-
-if (cancelUserModal) {
-
-    cancelUserModal.addEventListener(
-        "click",
-        closeUserModalFunction
-    );
-
-}
-
-
-/* Close modal when clicking outside */
-
-if (addUserModal) {
-
-    addUserModal.addEventListener(
-        "click",
-        event => {
-
-            if (event.target === addUserModal) {
-
-                closeUserModalFunction();
-
-            }
-
+        if (event.target === addUserModal) {
+            addUserModal.hidden = true;
         }
-    );
 
-}
+    });
+
+});
