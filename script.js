@@ -1,5 +1,3 @@
-alert("SCRIPT.JS IS WORKING!");
-
 /* =========================================================
    CENDEKIA MEDIKA — LOGIN SYSTEM
    Prototype only
@@ -167,8 +165,8 @@ if (loginForm) {
 const addUserButton =
     document.getElementById("addUserButton");
 
-const userModal =
-    document.getElementById("userModal");
+const addUserModal =
+    document.getElementById("addUserModal");
 
 const closeUserModal =
     document.getElementById("closeUserModal");
@@ -176,24 +174,25 @@ const closeUserModal =
 const cancelUserModal =
     document.getElementById("cancelUserModal");
 
-const addUserForm =
-    document.getElementById("addUserForm");
-
 
 function openUserModal() {
 
-    if (!userModal) return;
+    if (addUserModal) {
 
-    userModal.classList.add("open");
+        addUserModal.hidden = false;
+
+    }
 
 }
 
 
-function closeUserModalWindow() {
+function closeUserModalFunction() {
 
-    if (!userModal) return;
+    if (addUserModal) {
 
-    userModal.classList.remove("open");
+        addUserModal.hidden = true;
+
+    }
 
 }
 
@@ -212,7 +211,7 @@ if (closeUserModal) {
 
     closeUserModal.addEventListener(
         "click",
-        closeUserModalWindow
+        closeUserModalFunction
     );
 
 }
@@ -222,173 +221,27 @@ if (cancelUserModal) {
 
     cancelUserModal.addEventListener(
         "click",
-        closeUserModalWindow
+        closeUserModalFunction
     );
 
 }
 
 
-/* Close when clicking outside modal */
+/* Close modal when clicking outside */
 
-if (userModal) {
+if (addUserModal) {
 
-    userModal.addEventListener("click", event => {
+    addUserModal.addEventListener(
+        "click",
+        event => {
 
-        if (event.target === userModal) {
+            if (event.target === addUserModal) {
 
-            closeUserModalWindow();
+                closeUserModalFunction();
 
-        }
-
-    });
-
-}
-
-
-/* =========================================================
-   CREATE USER
-   ========================================================= */
-
-if (addUserForm) {
-
-    addUserForm.addEventListener("submit", event => {
-
-        event.preventDefault();
-
-
-        const name =
-            document
-                .getElementById("newUserName")
-                .value
-                .trim();
-
-        const email =
-            document
-                .getElementById("newUserEmail")
-                .value
-                .trim();
-
-        const role =
-            document
-                .getElementById("newUserRole")
-                .value;
-
-        const department =
-            document
-                .getElementById("newUserDepartment")
-                .value
-                .trim();
-
-        const status =
-            document
-                .getElementById("newUserStatus")
-                .value;
-
-
-        if (!name || !email || !role) {
-
-            alert("Please complete the required fields.");
-
-            return;
+            }
 
         }
-
-
-        const table =
-            document.querySelector("#usersTable tbody");
-
-
-        if (!table) return;
-
-
-        const row =
-            document.createElement("tr");
-
-
-        row.dataset.role = role;
-        row.dataset.status = status;
-
-
-        const roleName =
-            role.charAt(0).toUpperCase() +
-            role.slice(1);
-
-
-        const statusLabel =
-            status === "active"
-                ? "Active"
-                : "Inactive";
-
-
-        const statusClass =
-            status === "active"
-                ? "status-success"
-                : "status-neutral";
-
-
-        row.innerHTML = `
-
-            <td>
-                <strong>
-                    ${name}
-                </strong>
-            </td>
-
-            <td>
-                ${roleName}
-            </td>
-
-            <td>
-                ${department || "—"}
-            </td>
-
-            <td>
-                ${email}
-            </td>
-
-            <td>
-
-                <span class="status ${statusClass}">
-                    ${statusLabel}
-                </span>
-
-            </td>
-
-            <td>
-                Just now
-            </td>
-
-            <td>
-
-                <button
-                    class="table-action"
-                    type="button"
-                >
-                    ⋮
-                </button>
-
-            </td>
-
-        `;
-
-
-        table.appendChild(row);
-
-
-        // Reset form
-        addUserForm.reset();
-
-
-        // Close modal
-        closeUserModalWindow();
-
-
-        // Tell user it worked
-        alert(
-            `${name} has been added successfully.`
-        );
-
-    });
+    );
 
 }
-console.log("CENDEKIA MEDIKA script.js is working!");

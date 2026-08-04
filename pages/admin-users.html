@@ -599,26 +599,29 @@
 
 </div>
 
+
+<script src="../script.js"></script>
 <!-- ================= ADD USER MODAL ================= -->
 
-<div class="modal-overlay" id="userModal">
+<div
+    class="modal-overlay"
+    id="addUserModal"
+    hidden
+>
 
     <div class="modal">
 
         <div class="modal-header">
 
             <div>
-                <p class="eyebrow">USER MANAGEMENT</p>
-
-                <h2>
-                    Add New User
-                </h2>
+                <h2>Add New User</h2>
+                <p>Create a new hospital system account.</p>
             </div>
 
             <button
-                type="button"
                 class="modal-close"
                 id="closeUserModal"
+                type="button"
             >
                 ×
             </button>
@@ -628,13 +631,12 @@
 
         <form id="addUserForm">
 
-            <div class="modal-form-grid">
-
+            <div class="modal-body">
 
                 <div class="form-group">
 
                     <label for="newUserName">
-                        Full Name
+                        Full name
                     </label>
 
                     <input
@@ -650,7 +652,7 @@
                 <div class="form-group">
 
                     <label for="newUserEmail">
-                        Email Address
+                        Email address
                     </label>
 
                     <input
@@ -663,50 +665,76 @@
                 </div>
 
 
-                <div class="form-group">
+                <div class="form-row">
 
-                    <label for="newUserRole">
-                        Role
-                    </label>
+                    <div class="form-group">
 
-                    <select id="newUserRole" required>
+                        <label for="newUserRole">
+                            Role
+                        </label>
 
-                        <option value="">
-                            Select role
-                        </option>
+                        <select id="newUserRole">
 
-                        <option value="doctor">
-                            Doctor
-                        </option>
+                            <option value="doctor">
+                                Doctor
+                            </option>
 
-                        <option value="nurse">
-                            Nurse
-                        </option>
+                            <option value="nurse">
+                                Nurse
+                            </option>
 
-                        <option value="patient">
-                            Patient
-                        </option>
+                            <option value="patient">
+                                Patient
+                            </option>
 
-                        <option value="staff">
-                            Staff
-                        </option>
+                            <option value="staff">
+                                Staff
+                            </option>
 
-                    </select>
+                        </select>
 
-                </div>
+                    </div>
 
 
-                <div class="form-group">
+                    <div class="form-group">
 
-                    <label for="newUserDepartment">
-                        Department
-                    </label>
+                        <label for="newUserDepartment">
+                            Department
+                        </label>
 
-                    <input
-                        type="text"
-                        id="newUserDepartment"
-                        placeholder="e.g. Cardiology"
-                    >
+                        <select id="newUserDepartment">
+
+                            <option value="Cardiology">
+                                Cardiology
+                            </option>
+
+                            <option value="Internal Medicine">
+                                Internal Medicine
+                            </option>
+
+                            <option value="Emergency">
+                                Emergency
+                            </option>
+
+                            <option value="ICU">
+                                ICU
+                            </option>
+
+                            <option value="Pediatrics">
+                                Pediatrics
+                            </option>
+
+                            <option value="Administration">
+                                Administration
+                            </option>
+
+                            <option value="None">
+                                —
+                            </option>
+
+                        </select>
+
+                    </div>
 
                 </div>
 
@@ -714,7 +742,7 @@
                 <div class="form-group">
 
                     <label for="newUserStatus">
-                        Status
+                        Account status
                     </label>
 
                     <select id="newUserStatus">
@@ -763,4 +791,5 @@
 <script src="../script.js"></script>
 
 </body>
+
 </html>
