@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>User Management | CENDEKIA MEDIKA</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="role-admin">
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+                +
+            </div>
+
+            <div class="sidebar-logo-text">
+                <strong>CENDEKIA MEDIKA</strong>
+                <span>Hospital Management System</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section-title">
+                Overview
+            </div>
+
+            <a
+                href="admin-dashboard.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <div class="nav-section-title">
+                Management
+            </div>
+
+            <a
+                href="admin-users.html"
+                class="nav-item active"
+            >
+                <span class="nav-icon">♙</span>
+                <span>Users</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">♡</span>
+                <span>Patients</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚕</span>
+                <span>Doctors</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">✚</span>
+                <span>Nurses & Staff</span>
+            </a>
+
+
+            <div class="nav-section-title">
+                Operations
+            </div>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▣</span>
+                <span>Appointments</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+
+            <div class="nav-section-title">
+                System
+            </div>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="dashboard-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <div class="topbar-title">
+                    User Management
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <input
+                    class="search-box"
+                    type="search"
+                    placeholder="Search..."
+                >
+
+                <button class="icon-button">
+                    🔔
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="avatar">
+                        AD
+                    </div>
+
+                    <div class="user-info">
+                        <strong>Hospital Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <main class="page-content">
+
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        User Management
+                    </h1>
+
+                    <p>
+                        Manage accounts, roles, and access permissions.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="addUserButton"
+                >
+                    + Add New User
+                </button>
+
+            </div>
+
+
+            <!-- ================= FILTERS ================= -->
+
+            <div class="card user-toolbar">
+
+                <div class="user-search">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="search"
+                        id="userSearch"
+                        placeholder="Search by name or email..."
+                    >
+
+                </div>
+
+
+                <select id="roleFilter">
+
+                    <option value="all">
+                        All Roles
+                    </option>
+
+                    <option value="doctor">
+                        Doctor
+                    </option>
+
+                    <option value="nurse">
+                        Nurse
+                    </option>
+
+                    <option value="patient">
+                        Patient
+                    </option>
+
+                    <option value="staff">
+                        Staff
+                    </option>
+
+                </select>
+
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= USERS TABLE ================= -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            System Users
+                        </h3>
+
+                        <p class="table-subtitle">
+                            6 registered users
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table id="usersTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    User
+                                </th>
+
+                                <th>
+                                    Role
+                                </th>
+
+                                <th>
+                                    Department
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Last Active
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr data-role="doctor" data-status="active">
+
+                                <td>
+
+                                    <strong>
+                                        Dr. Amelia Putri
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    Doctor
+                                </td>
+
+                                <td>
+                                    Cardiology
+                                </td>
+
+                                <td>
+                                    amelia@cendekiamedika.com
+                                </td>
+
+                                <td>
+
+                                    <span class="status status-success">
+                                        Active
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    5 min ago
+                                </td>
+
+                                <td>
+
+                                    <button class="table-action">
+                                        ⋮
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-role="doctor" data-status="active">
+
+                                <td>
+
+                                    <strong>
+                                        Dr. Andi Pratama
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    Doctor
+                                </td>
+
+                                <td>
+                                    Internal Medicine
+                                </td>
+
+                                <td>
+                                    andi@cendekiamedika.com
+                                </td>
+
+                                <td>
+
+                                    <span class="status status-success">
+                                        Active
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    18 min ago
+                                </td>
+
+                                <td>
+
+                                    <button class="table-action">
+                                        ⋮
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-role="nurse" data-status="active">
+
+                                <td>
+
+                                    <strong>
+                                        Ns. Siti Rahma
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    Nurse
+                                </td>
+
+                                <td>
+                                    ICU
+                                </td>
+
+                                <td>
+                                    siti@cendekiamedika.com
+                                </td>
+
+                                <td>
+
+                                    <span class="status status-success">
+                                        Active
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    2 min ago
+                                </td>
+
+                                <td>
+
+                                    <button class="table-action">
+                                        ⋮
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-role="nurse" data-status="active">
+
+                                <td>
+
+                                    <strong>
+                                        Ns. Rani Wijaya
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    Nurse
+                                </td>
+
+                                <td>
+                                    Emergency
+                                </td>
+
+                                <td>
+                                    rani@cendekiamedika.com
+                                </td>
+
+                                <td>
+
+                                    <span class="status status-success">
+                                        Active
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    31 min ago
+                                </td>
+
+                                <td>
+
+                                    <button class="table-action">
+                                        ⋮
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-role="patient" data-status="active">
+
+                                <td>
+
+                                    <strong>
+                                        Budi Santoso
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    Patient
+                                </td>
+
+                                <td>
+                                    —
+                                </td>
+
+                                <td>
+                                    budi@example.com
+                                </td>
+
+                                <td>
+
+                                    <span class="status status-success">
+                                        Active
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    Today
+                                </td>
+
+                                <td>
+
+                                    <button class="table-action">
+                                        ⋮
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-role="staff" data-status="inactive">
+
+                                <td>
+
+                                    <strong>
+                                        Maya Permata
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    Staff
+                                </td>
+
+                                <td>
+                                    Administration
+                                </td>
+
+                                <td>
+                                    maya@cendekiamedika.com
+                                </td>
+
+                                <td>
+
+                                    <span class="status status-neutral">
+                                        Inactive
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    3 days ago
+                                </td>
+
+                                <td>
+
+                                    <button class="table-action">
+                                        ⋮
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>
