@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CENDEKIA MEDIKA | Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- BRANDING -->
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    +
+                </div>
+
+                <p class="brand-label">
+                    HOSPITAL MANAGEMENT SYSTEM
+                </p>
+
+                <h1>
+                    CENDEKIA<br>
+                    <span>MEDIKA</span>
+                </h1>
+
+                <p class="brand-description">
+                    A connected healthcare platform designed to
+                    support better coordination between patients,
+                    doctors, nurses, and hospital administrators.
+                </p>
+
+                <div class="brand-features">
+
+                    <div class="brand-feature">
+                        <div class="feature-icon">♡</div>
+                        <div>
+                            <strong>Patient-Centered Care</strong>
+                            <span>Information where it matters most.</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-feature">
+                        <div class="feature-icon">⌁</div>
+                        <div>
+                            <strong>Connected Healthcare</strong>
+                            <span>One system for the entire care team.</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-feature">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <strong>Secure & Organized</strong>
+                            <span>Role-based access to hospital information.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="brand-footer">
+                © 2026 CENDEKIA MEDIKA
+            </p>
+
+        </section>
+
+
+        <!-- LOGIN -->
+        <section class="login-panel">
+
+            <div class="login-container">
+
+                <div class="login-heading">
+                    <p class="eyebrow">WELCOME</p>
+
+                    <h2>Sign in to your account</h2>
+
+                    <p>
+                        Select your role and enter your credentials
+                        to continue.
+                    </p>
+                </div>
+
+
+                <!-- ROLE SELECTION -->
+
+                <div class="form-section">
+
+                    <label>Select your role</label>
+
+                    <div class="role-grid">
+
+                        <button
+                            type="button"
+                            class="role-card active"
+                            data-role="admin"
+                        >
+                            <span class="role-icon">♙</span>
+                            <span>Admin</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="role-card"
+                            data-role="doctor"
+                        >
+                            <span class="role-icon">⚕</span>
+                            <span>Doctor</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="role-card"
+                            data-role="nurse"
+                        >
+                            <span class="role-icon">✚</span>
+                            <span>Nurse</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="role-card"
+                            data-role="patient"
+                        >
+                            <span class="role-icon">♡</span>
+                            <span>Patient</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-field">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Sign in
+                    </button>
+
+                    <p
+                        id="loginMessage"
+                        class="login-message"
+                    ></p>
+
+                </form>
+
+
+                <div class="demo-info">
+
+                    <span>DEMO PROJECT</span>
+
+                    <p>
+                        Use a demo account to explore the system.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
