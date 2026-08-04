@@ -12,7 +12,7 @@ const demoAccounts = {
         email: "admin@cendekiamedika.com",
         password: "admin123",
         name: "Hospital Administrator",
-        page: "pages/admin-dashboard.html"
+        page: "/pages/admin-dashboard.html"
     },
 
     doctor: {
