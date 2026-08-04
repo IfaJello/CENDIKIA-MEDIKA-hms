@@ -198,13 +198,15 @@ function closeUserModalWindow() {
 
 if (addUserButton) {
 
-    addUserButton.addEventListener(
-        "click",
-        openUserModal
-    );
+    addUserButton.addEventListener("click", () => {
+
+        alert("Add User button is working!");
+
+        openUserModal();
+
+    });
 
 }
-
 
 if (closeUserModal) {
 
