@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,33 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="role-admin">
 
-<div class="dashboard role-admin">
+<div class="dashboard">
 
-    <!-- SIDEBAR -->
+    <!-- ================= SIDEBAR ================= -->
+
     <aside class="sidebar">
 
         <div class="sidebar-logo">
-            <div class="sidebar-logo-icon">+</div>
+
+            <div class="sidebar-logo-icon">
+                +
+            </div>
 
             <div class="sidebar-logo-text">
                 <strong>CENDEKIA MEDIKA</strong>
-                <span>HOSPITAL MANAGEMENT SYSTEM</span>
+                <span>Hospital Management System</span>
             </div>
+
         </div>
 
 
         <nav class="sidebar-nav">
 
-            <div class="nav-section-title">Overview</div>
+            <div class="nav-section-title">
+                Overview
+            </div>
 
             <a href="#" class="nav-item active">
                 <span class="nav-icon">⌂</span>
@@ -36,7 +44,9 @@
             </a>
 
 
-            <div class="nav-section-title">Management</div>
+            <div class="nav-section-title">
+                Management
+            </div>
 
             <a href="#" class="nav-item">
                 <span class="nav-icon">♙</span>
@@ -50,38 +60,37 @@
 
             <a href="#" class="nav-item">
                 <span class="nav-icon">⚕</span>
-                <span>Doctors & Nurses</span>
+                <span>Doctors</span>
             </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">✚</span>
+                <span>Nurses & Staff</span>
+            </a>
+
+
+            <div class="nav-section-title">
+                Operations
+            </div>
 
             <a href="#" class="nav-item">
                 <span class="nav-icon">▣</span>
                 <span>Appointments</span>
             </a>
 
-
-            <div class="nav-section-title">Hospital</div>
-
             <a href="#" class="nav-item">
                 <span class="nav-icon">▤</span>
-                <span>Departments</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">▥</span>
                 <span>Reports</span>
             </a>
 
 
-            <div class="nav-section-title">System</div>
+            <div class="nav-section-title">
+                System
+            </div>
 
             <a href="#" class="nav-item">
                 <span class="nav-icon">⚙</span>
                 <span>Settings</span>
-            </a>
-
-            <a href="../index.html" class="nav-item">
-                <span class="nav-icon">↪</span>
-                <span>Sign Out</span>
             </a>
 
         </nav>
@@ -89,10 +98,13 @@
     </aside>
 
 
-    <!-- MAIN -->
+    <!-- ================= MAIN ================= -->
+
     <div class="dashboard-main">
 
+
         <!-- TOPBAR -->
+
         <header class="topbar">
 
             <div class="topbar-left">
@@ -108,9 +120,16 @@
 
             <div class="topbar-right">
 
-                <button class="icon-button" title="Notifications">
-                    ♧
+                <input
+                    class="search-box"
+                    type="search"
+                    placeholder="Search..."
+                >
+
+                <button class="icon-button">
+                    🔔
                 </button>
+
 
                 <div class="user-profile">
 
@@ -119,8 +138,8 @@
                     </div>
 
                     <div class="user-info">
-                        <strong>Administrator</strong>
-                        <span>System Admin</span>
+                        <strong>Hospital Admin</strong>
+                        <span>Administrator</span>
                     </div>
 
                 </div>
@@ -131,17 +150,26 @@
 
 
         <!-- PAGE CONTENT -->
+
         <main class="page-content">
+
+
+            <!-- PAGE HEADER -->
 
             <div class="page-header">
 
                 <div>
-                    <h1>Good morning, Administrator</h1>
+
+                    <h1>
+                        Good morning, Admin
+                    </h1>
 
                     <p>
-                        Here's what's happening across CENDEKIA MEDIKA today.
+                        Here's what's happening at CENDEKIA MEDIKA today.
                     </p>
+
                 </div>
+
 
                 <button class="btn btn-primary">
                     + Add User
@@ -150,13 +178,15 @@
             </div>
 
 
-            <!-- KPI CARDS -->
+            <!-- ================= KPI CARDS ================= -->
 
             <section class="kpi-grid">
+
 
                 <div class="card kpi-card">
 
                     <div class="kpi-header">
+
                         <span class="kpi-label">
                             Total Patients
                         </span>
@@ -164,6 +194,7 @@
                         <div class="kpi-icon">
                             ♡
                         </div>
+
                     </div>
 
                     <div class="kpi-value">
@@ -184,6 +215,7 @@
                 <div class="card kpi-card">
 
                     <div class="kpi-header">
+
                         <span class="kpi-label">
                             Doctors
                         </span>
@@ -191,6 +223,7 @@
                         <div class="kpi-icon">
                             ⚕
                         </div>
+
                     </div>
 
                     <div class="kpi-value">
@@ -198,8 +231,8 @@
                     </div>
 
                     <div class="kpi-change">
-                        <span class="status status-success">
-                            82 active
+                        <span class="status status-info">
+                            Active
                         </span>
                     </div>
 
@@ -209,13 +242,15 @@
                 <div class="card kpi-card">
 
                     <div class="kpi-header">
+
                         <span class="kpi-label">
-                            Nurses
+                            Nurses & Staff
                         </span>
 
                         <div class="kpi-icon">
                             ✚
                         </div>
+
                     </div>
 
                     <div class="kpi-value">
@@ -223,8 +258,8 @@
                     </div>
 
                     <div class="kpi-change">
-                        <span class="status status-info">
-                            136 active
+                        <span class="status status-success">
+                            138 Active
                         </span>
                     </div>
 
@@ -234,6 +269,7 @@
                 <div class="card kpi-card">
 
                     <div class="kpi-header">
+
                         <span class="kpi-label">
                             Today's Appointments
                         </span>
@@ -241,15 +277,16 @@
                         <div class="kpi-icon">
                             ▣
                         </div>
+
                     </div>
 
                     <div class="kpi-value">
-                        64
+                        76
                     </div>
 
                     <div class="kpi-change">
                         <span class="status status-warning">
-                            8 pending
+                            12 Pending
                         </span>
                     </div>
 
@@ -258,9 +295,10 @@
             </section>
 
 
-            <!-- MAIN CONTENT -->
+            <!-- ================= MAIN CONTENT ================= -->
 
             <section class="content-grid">
+
 
                 <!-- APPOINTMENTS -->
 
@@ -268,13 +306,16 @@
 
                     <div class="card-header">
 
-                        <h3>Today's Appointments</h3>
+                        <h3>
+                            Today's Appointments
+                        </h3>
 
                         <a href="#">
                             View all
                         </a>
 
                     </div>
+
 
                     <div class="table-wrapper">
 
@@ -302,7 +343,7 @@
                                     </td>
 
                                     <td>
-                                        <strong>Andi Pratama</strong>
+                                        Budi Santoso
                                     </td>
 
                                     <td>
@@ -329,11 +370,11 @@
                                     </td>
 
                                     <td>
-                                        <strong>Siti Nurhaliza</strong>
+                                        Siti Rahma
                                     </td>
 
                                     <td>
-                                        Dr. Bima Wijaya
+                                        Dr. Andi Pratama
                                     </td>
 
                                     <td>
@@ -356,11 +397,11 @@
                                     </td>
 
                                     <td>
-                                        <strong>Rizky Maulana</strong>
+                                        Rina Maharani
                                     </td>
 
                                     <td>
-                                        Dr. Clara Dewi
+                                        Dr. Dimas Wijaya
                                     </td>
 
                                     <td>
@@ -383,34 +424,7 @@
                                     </td>
 
                                     <td>
-                                        <strong>Dewi Lestari</strong>
-                                    </td>
-
-                                    <td>
-                                        Dr. Ahmad Fauzan
-                                    </td>
-
-                                    <td>
-                                        Neurology
-                                    </td>
-
-                                    <td>
-                                        <span class="status status-info">
-                                            Scheduled
-                                        </span>
-                                    </td>
-
-                                </tr>
-
-
-                                <tr>
-
-                                    <td>
-                                        <strong>15:00</strong>
-                                    </td>
-
-                                    <td>
-                                        <strong>Fajar Hidayat</strong>
+                                        Ahmad Fauzan
                                     </td>
 
                                     <td>
@@ -423,7 +437,7 @@
 
                                     <td>
                                         <span class="status status-neutral">
-                                            Pending
+                                            Scheduled
                                         </span>
                                     </td>
 
@@ -444,32 +458,35 @@
 
                     <div class="card-header">
 
-                        <h3>Quick Actions</h3>
+                        <h3>
+                            Quick Actions
+                        </h3>
 
                     </div>
+
 
                     <div class="card-body">
 
                         <div class="quick-actions">
 
                             <button class="quick-action">
-                                <span>＋</span>
+                                <span>+</span>
                                 Add New User
                             </button>
 
                             <button class="quick-action">
-                                <span>♙</span>
-                                Manage Patients
+                                <span>+</span>
+                                Register Patient
                             </button>
 
                             <button class="quick-action">
                                 <span>▣</span>
-                                Appointments
+                                View Appointments
                             </button>
 
                             <button class="quick-action">
                                 <span>▤</span>
-                                View Reports
+                                Generate Report
                             </button>
 
                         </div>
@@ -481,9 +498,10 @@
             </section>
 
 
-            <!-- LOWER CONTENT -->
+            <!-- ================= LOWER CONTENT ================= -->
 
             <section class="content-grid content-grid-equal">
+
 
                 <!-- RECENT ACTIVITY -->
 
@@ -491,7 +509,9 @@
 
                     <div class="card-header">
 
-                        <h3>Recent Activity</h3>
+                        <h3>
+                            Recent Activity
+                        </h3>
 
                         <a href="#">
                             View all
@@ -499,9 +519,11 @@
 
                     </div>
 
+
                     <div class="card-body">
 
                         <div class="activity-list">
+
 
                             <div class="activity-item">
 
@@ -514,7 +536,7 @@
                                     </strong>
 
                                     <span>
-                                        Andi Pratama · 12 minutes ago
+                                        Budi Santoso was added to the system · 12 min ago
                                     </span>
 
                                 </div>
@@ -533,7 +555,7 @@
                                     </strong>
 
                                     <span>
-                                        Siti Nurhaliza · 28 minutes ago
+                                        Appointment with Dr. Amelia Putri · 28 min ago
                                     </span>
 
                                 </div>
@@ -548,11 +570,11 @@
                                 <div class="activity-content">
 
                                     <strong>
-                                        New staff account created
+                                        Staff account created
                                     </strong>
 
                                     <span>
-                                        Nurse account · 1 hour ago
+                                        New nurse account created · 1 hour ago
                                     </span>
 
                                 </div>
@@ -567,16 +589,17 @@
                                 <div class="activity-content">
 
                                     <strong>
-                                        Medical report updated
+                                        System report generated
                                     </strong>
 
                                     <span>
-                                        Patient record · 2 hours ago
+                                        Monthly hospital activity report · 2 hours ago
                                     </span>
 
                                 </div>
 
                             </div>
+
 
                         </div>
 
@@ -591,17 +614,24 @@
 
                     <div class="card-header">
 
-                        <h3>System Status</h3>
+                        <h3>
+                            System Status
+                        </h3>
 
                     </div>
+
 
                     <div class="card-body">
 
                         <div class="activity-list">
 
+
                             <div class="activity-item">
 
-                                <div class="activity-dot"></div>
+                                <div
+                                    class="activity-dot"
+                                    style="background: var(--success);"
+                                ></div>
 
                                 <div class="activity-content">
 
@@ -610,7 +640,7 @@
                                     </strong>
 
                                     <span>
-                                        System operational
+                                        Operational
                                     </span>
 
                                 </div>
@@ -624,7 +654,10 @@
 
                             <div class="activity-item">
 
-                                <div class="activity-dot"></div>
+                                <div
+                                    class="activity-dot"
+                                    style="background: var(--success);"
+                                ></div>
 
                                 <div class="activity-content">
 
@@ -633,7 +666,7 @@
                                     </strong>
 
                                     <span>
-                                        System operational
+                                        Operational
                                     </span>
 
                                 </div>
@@ -647,16 +680,19 @@
 
                             <div class="activity-item">
 
-                                <div class="activity-dot"></div>
+                                <div
+                                    class="activity-dot"
+                                    style="background: var(--success);"
+                                ></div>
 
                                 <div class="activity-content">
 
                                     <strong>
-                                        Medical Records
+                                        Authentication
                                     </strong>
 
                                     <span>
-                                        System operational
+                                        Operational
                                     </span>
 
                                 </div>
@@ -667,28 +703,6 @@
 
                             </div>
 
-
-                            <div class="activity-item">
-
-                                <div class="activity-dot"></div>
-
-                                <div class="activity-content">
-
-                                    <strong>
-                                        Database
-                                    </strong>
-
-                                    <span>
-                                        System operational
-                                    </span>
-
-                                </div>
-
-                                <span class="status status-success">
-                                    Online
-                                </span>
-
-                            </div>
 
                         </div>
 
