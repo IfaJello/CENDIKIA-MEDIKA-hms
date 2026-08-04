@@ -1,3 +1,5 @@
+alert("SCRIPT IS WORKING");
+
 /* =========================================================
    CENDEKIA MEDIKA — LOGIN SYSTEM
    Prototype only
